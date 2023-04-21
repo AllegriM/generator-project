@@ -7,9 +7,6 @@ module.exports = class extends Generator {
             "add",
             "-D",
             "eslint",
-            "tailwindcss",
-            "postcss",
-            "autoprefixer",
             "eslint-config-prettier",
             "eslint-plugin-prettier",
             "@typescript-eslint/parser",
@@ -35,22 +32,6 @@ module.exports = class extends Generator {
 
     editorconfig() {
         this.fs.copy(this.templatePath(".editorconfig"), this.destinationPath(".editorconfig"));
-    }
-
-    // Create files to destination folder
-
-    tailwind() {
-        this.fs.copy(
-            this.templatePath('tailwind.config.js'),
-            this.destinationPath('tailwind.config.js')
-        );
-    }
-
-    postcss() {
-        this.fs.copy(
-            this.templatePath('postcss.config.js'),
-            this.destinationPath('postcss.config.js')
-        );
     }
 
 }
