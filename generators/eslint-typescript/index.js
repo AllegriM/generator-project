@@ -52,6 +52,13 @@ module.exports = class extends Generator {
         );
     };
 
+    tsconfig() {
+        this.fs.copy(
+            this.templatePath('tsconfig.json'),
+            this.destinationPath('tsconfig.json')
+        );
+    }
+
     // Create files to destination folder
 
     tailwind() {
