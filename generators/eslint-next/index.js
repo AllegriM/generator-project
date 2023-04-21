@@ -6,12 +6,10 @@ module.exports = class extends Generator {
         this.spawnCommandSync("pnpm", [
             "add",
             "-D",
+            "prettier",
             "eslint",
             "eslint-config-prettier",
             "eslint-plugin-prettier",
-            "@typescript-eslint/parser",
-            "@typescript-eslint/eslint-plugin",
-            "eslint-import-resolver-typescript",
             "eslint-plugin-import",
             "@vercel/style-guide",
         ]);
