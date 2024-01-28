@@ -1,35 +1,42 @@
-const Generator = require('yeoman-generator');
+const Generator = require("yeoman-generator");
 
-// 
 module.exports = class extends Generator {
-    installDependencies() {
-        this.spawnCommandSync("pnpm", [
-            "add",
-            "-D",
-            "prettier",
-            "eslint",
-            "eslint-config-prettier",
-            "eslint-plugin-prettier",
-            "eslint-plugin-import",
-            "@vercel/style-guide",
-        ]);
-    }
+  installDependencies() {
+    this.spawnCommandSync("pnpm", [
+      "add",
+      "-D",
+      "prettier",
+      "eslint",
+      "eslint-config-prettier",
+      "eslint-plugin-prettier",
+      "eslint-plugin-import",
+      "@vercel/style-guide",
+    ]);
+  }
 
-    eslint() {
-        this.fs.copy(this.templatePath(".eslintrc.cjs"), this.destinationPath(".eslintrc.cjs"));
-        this.fs.delete(this.destinationPath(".eslintrc.json"));
-    }
+  eslint() {
+    this.fs.copy(
+      this.templatePath(".eslintrc.cjs"),
+      this.destinationPath(".eslintrc.cjs")
+    );
+    this.fs.delete(this.destinationPath(".eslintrc.json"));
+  }
 
-    vscode() {
-        this.fs.copy(this.templatePath(".vscode"), this.destinationPath(".vscode"));
-    }
+  vscode() {
+    this.fs.copy(this.templatePath(".vscode"), this.destinationPath(".vscode"));
+  }
 
-    eslintIgnore() {
-        this.fs.copy(this.templatePath(".eslintignore"), this.destinationPath(".eslintignore"));
-    }
+  eslintIgnore() {
+    this.fs.copy(
+      this.templatePath(".eslintignore"),
+      this.destinationPath(".eslintignore")
+    );
+  }
 
-    editorconfig() {
-        this.fs.copy(this.templatePath(".editorconfig"), this.destinationPath(".editorconfig"));
-    }
-
-}
+  editorconfig() {
+    this.fs.copy(
+      this.templatePath(".editorconfig"),
+      this.destinationPath(".editorconfig")
+    );
+  }
+};

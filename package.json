@@ -15,6 +15,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "yeoman-generator": "^5.8.0"
+    "yeoman-generator": "^5.10.0"
   }
 }
